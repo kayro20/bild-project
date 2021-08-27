@@ -22,16 +22,18 @@ const Carousel = ({ classes, images }) => {
         data-testid='carousel-images'
       >
         {
-          images.map((image, index) => <div
-            style={{ backgroundImage: `url('${image}')` }}
-            className={classes.Carousel_img}
-            key={index}
-            data-testid='carousel-image'
-          >
-          </div>
+          images.map((image, index) =>
+            <div
+              style={{ backgroundImage: `url('${image}')` }}
+              className={classes.Carousel_img}
+              key={index}
+              data-testid='carousel-image'
+            >
+            </div>
           )
         }
       </SwipeableViews>
+
       <Dots
         dots={images}
         activeIndex={index}

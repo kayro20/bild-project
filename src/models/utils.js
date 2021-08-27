@@ -46,11 +46,12 @@ export const hasInvalidUsableAreas = usableAreas =>
     ? usableAreas.find(usableArea => usableArea <= 10)
     : usableAreas <= 10
 
-export const hasValidGeolocation = geolocation => !!geolocation && !!geolocation.latitude && !!geolocation.longitude
+export const hasValidGeolocation = geolocation =>
+  !!geolocation && !!geolocation.latitude && !!geolocation.longitude
 
 export const hasValidBusinessRules = product =>
-hasValidGeolocation(product.address.geo_location)
-&& !hasInvalidUsableAreas(product.units.usable_areas)
+  hasValidGeolocation(product.address.geo_location)
+  && !hasInvalidUsableAreas(product.units.usable_areas)
 
 export const getListInfo = product => {
   return {

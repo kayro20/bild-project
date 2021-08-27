@@ -10,8 +10,16 @@ const Favorite = ({ classes }) => {
 
   return (
     isActive
-      ? <StarRoundedIcon className={classes.Favorite} onClick={() => setIsActive(!isActive)} data-testid='border-star'/>
-      : <StarBorderRoundedIcon className={classes.Favorite} onClick={() => setIsActive(!isActive)} data-testid='filled-star'/>
+      ? <StarRoundedIcon
+        className={classes.Favorite}
+        onClick={() => setIsActive(!isActive)}
+        data-testid='border-star'
+      />
+      : <StarBorderRoundedIcon
+        className={classes.Favorite}
+        onClick={() => setIsActive(!isActive)}
+        data-testid='filled-star'
+      />
   )
 }
 

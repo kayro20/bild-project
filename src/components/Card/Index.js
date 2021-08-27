@@ -1,14 +1,16 @@
 import React from 'react'
-import { Button, Paper, withStyles } from '@material-ui/core'
+import { Paper, withStyles } from '@material-ui/core'
 
+import BildButton from '../ui/Button'
 import Carousel from '../ui/Carousel/Index'
 import Favorite from '../ui/Favorite'
+import CardWithShadow from './CardWithShadow'
 import Header from './Header'
 import Subheader from './SubHeader'
 import ItemList from './ItemList'
 
 const Card = ({ classes, info, listInfo }) =>
-  <div className={classes.Card_root} data-testid='card'>
+  <CardWithShadow>
     <Paper elevation={0} className={classes.Card_carousel}>
       <Carousel images={info.photos} />
       <div className={classes.Card_favorite}><Favorite /></div>
@@ -16,7 +18,9 @@ const Card = ({ classes, info, listInfo }) =>
 
     <Paper elevation={0} className={classes.Card_info}>
       <Header>{info.name}</Header>
+
       <Subheader address={info.address} />
+
       {
         Object.keys(listInfo).map((info, index) => {
           return !!listInfo[info].text
@@ -28,29 +32,19 @@ const Card = ({ classes, info, listInfo }) =>
         })
       }
 
-      <Button
+      <BildButton
         variant="contained"
         color="primary"
         disableElevation
-        className={classes.Card_button}
         fullWidth
         size="large"
       >
         Ver mais
-      </Button>
+      </BildButton>
     </Paper>
-  </div>
+  </CardWithShadow>
 
 const styles = () => ({
-  Card_root: {
-    display: 'flex',
-    flexFlow: 'column nowrap',
-    width: 300,
-    borderRadius: 16,
-    boxShadow: `-7px 11px 20px 0px #ed72031f,
-     0px 0px 0px 0px #ed720300,
-     0px 7px 20px 0px #ed720300`
-  },
   Card_carousel: {
     position: 'relative'
   },
@@ -63,15 +57,7 @@ const styles = () => ({
     marginTop: -15,
     zIndex: 2,
     borderRadius: 16,
-    padding: '16px 24px 8px 24px'
-  },
-  Card_button: {
-    textTransform: 'none',
-    fontFamily: "'Montserrat',sans-serif",
-    fontWeight: 700,
-    borderRadius: 16,
-    height: 49,
-    marginTop: 16
+    padding: '24px 24px 16px 24px'
   }
 })
 

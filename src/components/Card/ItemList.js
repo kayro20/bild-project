@@ -5,10 +5,10 @@ import { withStyles } from '@material-ui/core'
 import Text from '../ui/Text'
 
 const ItemList = ({ classes, icon, text }) =>
-<div className={classes.ItemList_root} data-testid='list-item'>
-  <img src={`/assets/${icon}.svg`} />
-  <Text size='sm' color='black'>{text}</Text>
-</div>
+  <div className={classes.ItemList_root} data-testid='list-item'>
+    <img src={`/assets/${icon}.svg`} alt={`${icon}-icon`}/>
+    <Text size='sm' color='black'>{text}</Text>
+  </div>
 
 const styles = () => ({
   ItemList_root: {

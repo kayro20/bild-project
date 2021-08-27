@@ -3,10 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { withStyles } from '@material-ui/core'
 
 import { apiService } from '../services/httpService'
-
 import Loading from '../components/ui/Loading'
 import Card from '../components/Card/Index'
-
 import {
   isEmpty,
   getListInfo,
@@ -41,7 +39,8 @@ const Index = ({ classes }) => {
         loading
           ? <Loading />
           : !isEmpty(productsList) && productsList.map(product =>
-            hasValidBusinessRules(product) && <div key={product.name} className={classes.Index_wrapper}>
+            hasValidBusinessRules(product)
+            && <div key={product.name} className={classes.Index_wrapper}>
               <Card info={product} listInfo={getListInfo(product)} />
             </div>
           )

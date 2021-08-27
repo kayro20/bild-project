@@ -1,21 +1,21 @@
 import React from 'react'
 import { CircularProgress, withStyles } from '@material-ui/core'
 
+const Loading = ({ classes, size, ...props }) =>
+  <div className={classes.Loading_wrapper}>
+    <CircularProgress size={size || 80} className={classes.Loading} {...props} />
+  </div>
+
 const styles = () => ({
+  Loading_wrapper: {
+    padding: '20px',
+    textAlign: 'center'
+  },
   Loading: {
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative'
-  },
-  Loading_wrapper: {
-    padding: '20px',
-    textAlign: 'center'
   }
 })
 
-export default withStyles(styles)(
-  ({ size, classes, ...props }) =>
-  <div className={classes.Loading_wrapper}>
-    <CircularProgress size={size || 80} className={classes.Loading} {...props} />
-  </div>
-)
+export default withStyles(styles)(Loading)
