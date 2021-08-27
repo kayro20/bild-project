@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { CircularProgress, withStyles } from '@material-ui/core'
 
 const Loading = ({ classes, size, ...props }) =>

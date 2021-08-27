@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded'
 import StarRoundedIcon from '@material-ui/icons/StarRounded'
-
 import { withStyles } from '@material-ui/core'
 
 const Favorite = ({ classes }) => {

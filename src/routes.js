@@ -1,5 +1,4 @@
 import React, { Suspense, lazy } from 'react'
-
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Loading from './components/ui/Loading'
